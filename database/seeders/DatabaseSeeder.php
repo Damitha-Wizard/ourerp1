@@ -4,6 +4,11 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Permission as PermissionModel;
+use App\Models\Page as PageModel;
+use App\Models\PermissionsInPage as PermissionsInPageModel;
+use App\Models\User as UserModel;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,13 +20,43 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        $Permission=[
-            'name' => 'Alter Permissions',
-            'name_si' => 'අවසර වෙනස් කරන්න',
-            'name_chi' => '更改权限',
-            'description' => ''
-        ];
-
-        PermissionModel::create($Permission);
+        
+//        $user_data=[
+//            'name' => 'Damitha',
+//            'email' => 'damitha.wizard@gmail.com',
+//            'email_verified_at' => now(),
+//            'password' => Hash::make('Damitha#1@a'),
+//            'remember_token' => Str::random(10),
+//            'created_at' => now(),
+//            'updated_at' => now()
+//        ];
+//        
+//        $user= UserModel::create($user_data);
+//        
+//        $page_data=[
+//            'name' => 'View Permissions',
+//            'description' => '',
+//            'name_si' => 'අවසර වෙනස් කරන්න',
+//            'description_si' => '',
+//            'name_chi' => '更改权限',
+//            'description_chi' => ''
+//        ];
+//
+//        $page=PageModel::create($page_data);
+//        
+//        $user->AccessiblePages()->create($page);
+//                
+//        $page_data=[
+//            'name' => 'Alter Permissions',
+//            'description' => '',
+//            'name_si' => 'අවසර වෙනස් කරන්න',
+//            'description_si' => '',
+//            'name_chi' => '更改权限',
+//            'description_chi' => ''
+//        ];
+//
+//        $page=PageModel::create($page_data);
+//        
+//        $user->AccessiblePages()->create($page);
     }
 }

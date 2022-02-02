@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 use App\Models\Permission as PermissionModel;
+use App\Models\Page as PageModel;
 
 class User extends Authenticatable
 {
@@ -44,7 +45,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
-    public function Permissions(){
+    public function AllowedPermissions(){
         return $this->hasMany(PermissionModel::class);
+    }
+    
+    public function AccessiblePages(){
+        return $this->hasMany(PageModel::class);
     }
 }
