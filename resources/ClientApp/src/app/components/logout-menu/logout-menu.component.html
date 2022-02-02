@@ -1,0 +1,9 @@
+<div style="display: inline-block;margin-top:5px;margin-right: 5px;">
+    <button mat-icon-button (click)="OpenLogoutMenu();"><mat-icon>person</mat-icon></button>
+</div>
+<div class="Menu" *ngIf="MenuIsShown" (mouseleave)="MenuIsShown=false;" (click)="MenuIsShown=false;">
+    <div (click)="Logout();">{{ 'logout' | translate }}</div><br/>
+    <div (click)="ShowProfile();">{{ 'profile' | translate }}</div>
+</div>
+
+

@@ -1,0 +1,108 @@
+<div style="text-align: center;">
+    <div class="BigForm">
+        <h4 class="h4center">{{ 'record_job' | translate }}</h4>
+        <div class="row" style="margin-left:0;margin-right: 0;">
+            <div class="col-lg-3 col-md-4 Label">
+                {{ 'sent_by' | translate }}
+            </div>
+            <div class="col-lg-9 col-md-8">
+                <input type="text" class="OnlyTextAndNumbersNoSymbols" [(ngModel)]="SentBy" maxlength="150" style="width:100%;" />
+            </div>
+        </div>
+        <div class="row" style="margin-left:0;margin-right: 0;">
+            <div class="col-lg-3 col-md-4 Label">
+                {{ 'received_date' | translate }}
+            </div>
+            <div class="col-lg-2 col-md-3">
+                <input type="text" [(ngModel)]="ReceivedDate" maxlength="10" style="width:100%;" id="dpReceivedDate" />
+                <!-- <p-calendar [(ngModel)]="ReceivedDate" dateFormat="yy-mm-dd"></p-calendar> -->
+            </div>
+            <div class="col-lg-7 col-md-5">
+                
+            </div>
+        </div>
+        <div class="row" style="margin-left:0;margin-right: 0;">
+            <div class="col-lg-3 col-md-4 Label">
+                {{ 'received_time' | translate }}
+            </div>
+            <div class="col-lg-2 col-md-3">
+                <input type="text" (focus)="TimePickerFocussed();" [(ngModel)]="ReceivedTime" maxlength="8" style="width:100%;" id="tpReceivedTime" />
+                <!-- <p-calendar [(ngModel)]="ReceivedDate" dateFormat="yy-mm-dd"></p-calendar> -->
+            </div>
+            <div class="col-lg-7 col-md-5">
+                
+            </div>
+        </div>
+        <div class="row" style="margin-left:0;margin-right: 0;">
+            <div class="col-lg-3 col-md-4 Label">
+                {{ 'received_by' | translate }}
+            </div>
+            <div class="col-lg-9 col-md-8" style="text-align: left;">
+                <select name="ReceivedBy" id="cboReceivedBy" style="width:100%;display:inline-block;">
+                    <option *ngFor="let User of Users" [value]="User.id">{{ User.person }}</option>
+                   
+                </select>
+            </div>
+        </div>
+        <div class="row" style="margin-left:0;margin-right: 0;">
+            <div class="col-lg-3 col-md-4 Label">
+                {{ 'job_title' | translate }}
+            </div>
+            <div class="col-lg-9 col-md-8">
+                <input type="text" [(ngModel)]="JobTitle" maxlength="150" style="width:100%;" />
+            </div>
+        </div>
+        <div class="row" style="margin-left:0;margin-right: 0;">
+            <div class="col-lg-3 col-md-4 Label">
+                {{ 'description' | translate }}
+            </div>
+            <div class="col-lg-9 col-md-8">
+                <textarea class="OnlyTextAndNumbersNoSymbols" [(ngModel)]="JobTitle" maxlength="500" rows="4" cols="100" style="width:100%;"></textarea>
+            </div>
+        </div>
+        <div class="row" style="margin-left:0;margin-right: 0;">
+            <div class="col-lg-3 col-md-4 Label">
+                {{ 'expected_date' | translate }}
+            </div>
+            <div class="col-lg-2 col-md-3">
+                <input type="text" [(ngModel)]="ExpectedDate" maxlength="10" style="width:100%;" id="dpExpectedDate" />
+                <!-- <p-calendar [(ngModel)]="ReceivedDate" dateFormat="yy-mm-dd"></p-calendar> -->
+            </div>
+            <div class="col-lg-7 col-md-5">
+                
+            </div>
+        </div>
+        <div class="row" style="margin-left:0;margin-right: 0;">
+            <div class="col-lg-3 col-md-4 Label">
+                {{ 'expected_time' | translate }}
+            </div>
+            <div class="col-lg-2 col-md-3">
+                <input type="text" (focus)="TimePickerFocussed();" [(ngModel)]="ExpectedTime" maxlength="8" style="width:100%;" id="tpExpectedTime" />
+                <!-- <p-calendar [(ngModel)]="ReceivedDate" dateFormat="yy-mm-dd"></p-calendar> -->
+            </div>
+            <div class="col-lg-7 col-md-5">
+                
+            </div>
+        </div>
+        <div class="row" style="margin-left:0;margin-right: 0;">
+            <div class="col-lg-3 col-md-4 Label">
+                {{ 'priority_level_0_to_100' | translate }}
+            </div>
+            <div class="col-lg-5 col-md-4">
+                <div style="width:100%;margin-top:11px;" id="sliderPriority"></div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <input type="text" (change)="updatePrioritySlider();" [(ngModel)]="Priority" maxlength="3" style="width:100%;" id="txtPriority" class="IntergerInput" style="text-align: center;" />
+            </div>
+        </div>
+        <div class="row" style="margin-left:0;margin-right: 0;">
+            <div class="col-lg-3 col-md-4 Label">
+                {{ 'current_status' | translate }}
+            </div>
+            <div class="col-lg-9 col-md-8">
+                <textarea class="OnlyTextAndNumbersNoSymbols" [(ngModel)]="CurrentStatus" maxlength="500" rows="4" cols="100" style="width:100%;"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+

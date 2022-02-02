@@ -1,0 +1,11 @@
+<div style="display: block;margin-top:5px;margin-right: 5px;float:left;margin-left:5px;">
+    <button mat-icon-button><img (click)="OpenLogoutMenu();" [src]="ImageUrl" style="height:25px;width:25px;"/></button>
+</div>
+<div class="Menu" *ngIf="MenuIsShown" (mouseleave)="MenuIsShown=false;" (click)="MenuIsShown=false;">
+    <div (click)="ShowRecordJobPage();">{{ 'record_job' | translate }}</div>
+    <div >{{ 'assign_a_worker_to_job' | translate }}</div>
+    <div >{{ 'update_your_status' | translate }}</div><hr/>
+    <div >{{ 'update_anothers_status' | translate }}</div><hr/>
+    <div >{{ 'permissions' | translate }}</div><hr/>
+    <div >{{ 'exit' | translate }}</div><hr/>
+</div>

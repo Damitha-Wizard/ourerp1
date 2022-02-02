@@ -1,0 +1,87 @@
+
+
+h4.h4center{
+    text-align: center!important;
+}
+
+@media screen and (max-width: 275px) {
+   .BigForm{
+       width:100%;
+   }
+   .Label{
+        text-align: center!important;
+   }
+}
+
+@media screen and (min-width: 276px) and (max-width: 575px) {
+    .BigForm{
+        width:100%;
+    }
+    .Label{
+        text-align: center!important;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .BigForm{
+        width:90%;
+    }
+    .Label{
+        text-align: center!important;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 909px) {
+    .BigForm{
+        width:80%;
+    }
+    .Label{
+        text-align: right!important;
+    }
+}
+
+@media screen and (min-width: 910px)  {
+    .BigForm{
+        width:70%;
+    }
+    .Label{
+        text-align: right!important;
+    }
+}
+
+.BigForm{
+    display: inline-block!important;
+    background-color: lightgreen;
+    border:3px solid lime;
+    color: black;
+    border-radius: 12px;
+    padding-bottom: 25px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    -webkit-box-shadow: 7px -5px 10px 0px #4B0082, 11px -9px 10px 0px #0000FF, 16px -14px 10px 0px #00FF00, 20px -17px 10px 0px #FFFF00, 24px -19px 10px 0px #FF7F00, 27px -23px 10px 0px #FF0000, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 7px -5px 10px 0px #4B0082, 11px -9px 10px 0px #0000FF, 16px -14px 10px 0px #00FF00, 20px -17px 10px 0px #FFFF00, 24px -19px 10px 0px #FF7F00, 27px -23px 10px 0px #FF0000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.BigForm input[type="text"], .BigForm input[type="date"], .BigForm textarea{
+    background-color: darkslategray;
+    color: lime;
+    padding: 3px;
+}
+
+.Label{
+    padding-top: 2px;
+}
+
+.BigForm div.row{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+ul.ui-timepicker-viewport li.ui-menu-item a.ui-active-item{
+    color: black!important;
+}
+
+.BigForm #cboReceivedBy-button{
+    width:100%!important;
+}

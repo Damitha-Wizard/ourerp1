@@ -1,0 +1,13 @@
+  <div style="display:inline-block;margin-right:9px;margin-left:9px;">
+    <select 
+        class="form-control" 
+        #selectedLang 
+        (change)="switchLang(selectedLang.value)">
+        <option *ngFor="let language of Languages" 
+          [value]="language"
+          [selected]="language === CurrentLanguage">
+          {{ language }}
+        </option>
+    </select>
+  </div>
+  

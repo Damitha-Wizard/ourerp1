@@ -1,0 +1,145 @@
+/* @use 'sass:map';
+@use '@angular/material' as mat;
+
+$color-config:    mat.get-color-config('deeppurple-amber');
+$primary-palette: map.get($color-config, 'primary');
+$accent-palette:  map.get($color-config, 'accent'); */
+
+.FixedToolBarCollection{
+    min-height: 50px;
+    background-color: darkslategray;
+    color:goldenrod;
+    position: fixed;
+    top: 0;
+    left:0;
+    right:0;
+    z-index: 3;
+    border-top:1px solid green;
+    border-bottom:1px solid green;
+}
+
+.ScrollableContent{
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    z-index: 0;
+}
+
+.Toolbar{
+    min-height: 50px;
+    background-color: darkslategray;
+    color:goldenrod;
+    border-bottom:1px solid green;
+    z-index: 9;
+    text-align: right;
+}
+
+.FixedFooter{
+    min-height: 50px;
+    background-color: darkslategray;
+    color:goldenrod;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    right:0;
+    z-index: 9;
+    border-top:2px solid green;
+}
+
+.PageContent{
+    z-index: 0;
+    padding-top: 80px;
+}
+
+@media screen and (max-width: 275px) {
+    .VeryLargeScreens{
+        display: none;
+    }
+    .LargeScreens{
+        display: none;
+    }
+    .MediumScreens{
+        display: none;
+    }
+    .SmallScreens{
+        display: none;
+    }
+    .TinyScreens{
+        display: unset;
+    }
+
+}
+
+@media screen and (min-width: 276px) and (max-width: 575px) {
+    .VeryLargeScreens{
+        display: none;
+    }
+    .LargeScreens{
+        display: none;
+    }
+    .MediumScreens{
+        display: none;
+    }
+    .SmallScreens{
+        display: unset;
+    }
+    .TinyScreens{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .VeryLargeScreens{
+        display: none;
+    }
+    .LargeScreens{
+        display: none;
+    }
+    .MediumScreens{
+        display: unset;
+    }
+    .SmallScreens{
+        display: none;
+    }
+    .TinyScreens{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 909px) {
+    .VeryLargeScreens{
+        display: none;
+    }
+    .LargeScreens{
+        display: unset;
+    }
+    .MediumScreens{
+        display: none;
+    }
+    .SmallScreens{
+        display: none;
+    }
+    .TinyScreens{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 910px)  {
+    .VeryLargeScreens{
+        display: unset;
+    }
+    .LargeScreens{
+        display: none;
+    }
+    .MediumScreens{
+        display: none;
+    }
+    .SmallScreens{
+        display: none;
+    }
+    .TinyScreens{
+        display: none;
+    }
+}
+
+
