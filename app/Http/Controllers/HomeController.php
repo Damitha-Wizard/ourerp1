@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+
+use App\Models\jQueryTheme as jQueryThemeModel;
 
 class HomeController extends Controller
 {
@@ -15,19 +18,23 @@ class HomeController extends Controller
         return view('dashboard');
     }
     
-    public function getLanguage(Request $request){
-        
-        $Language=$request->session()->get('Language');
-        
-        return $Language;
-    }
+    
     
     public function setLanguage(Request $request){
         
         $Language=$request->post('Language');
         
-        $request->session()->put('Language',$Language);
+        $minutes = 60*24*30;
+        $response = new Response($Language,200);
+        $response->withCookie(cookie('Language', $Language, $minutes));
+
+        return $response;
+    }
+    
+    public function getjQueryUIThemes(Request $request){
+               
+        $jQueryUIThemes=jQueryThemeModel::all();
         
-        return $Language;
+        return json_encode($jQueryUIThemes);
     }
 }

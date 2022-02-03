@@ -30,21 +30,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(200);
         
-        session_start();
         
-        if(!isset($_SESSION['jQueryUITheme'])){
-            $_SESSION['jQueryUITheme']='Le Frog';
-        }
         
-        $jQueryUITheme=$_SESSION['jQueryUITheme'];
         
-        if(!isset($_SESSION['Language'])){
-            $_SESSION['Language']='en';
-        }
-        
-        $Language=$_SESSION['Language'];
-        
-        View::share('jQueryUITheme', $jQueryUITheme);
-        View::share('Language', $Language);
     }
 }

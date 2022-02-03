@@ -21,4 +21,8 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [HomeController::class,'index'])->middleware(['auth'])->name('dashboard');
 
+Route::post('/set-language', [HomeController::class,'setLanguage'])->name('set-language');
+
+Route::get('/get-jquery-themes', [HomeController::class,'getjQueryUIThemes'])->name('get-jquery-themes');
+
 require __DIR__.'/auth.php';

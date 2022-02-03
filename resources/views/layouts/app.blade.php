@@ -15,7 +15,10 @@
                 
                 echo $Meta;
                 
-                
+                $jQueryUITheme = request()->cookie('jQueryUITheme');
+                if($jQueryUITheme==''){
+                    $jQueryUITheme='Le Frog';
+                }
                 
                 ?>
         

@@ -14,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-
+import { CookieService } from 'ngx-cookie-service';
 
 import { MaterialModule } from './angular-material';
 import { Layout001Component } from './layouts/layout001/layout001.component';
@@ -95,7 +95,7 @@ export const DateFormats = {
       }
     })
   ],
-  providers: [ { provide: MAT_DATE_FORMATS, useValue: DateFormats },MessegeService, WindowRefService, AdService, LayoutsService, Location, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [ CookieService,{ provide: MAT_DATE_FORMATS, useValue: DateFormats },MessegeService, WindowRefService, AdService, LayoutsService, Location, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
