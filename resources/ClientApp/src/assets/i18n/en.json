@@ -27,5 +27,8 @@
     "exit":"Exit Web App",
     "choose_a_date":"Choose Date",
     "long-page":"Long-Page",
-    "short-page":"Short-Page"
+    "short-page":"Short-Page",
+    "colors":"Colors",
+    "layout":"Layout",
+    "jQuery_theme":"jQuery Theme"
 }

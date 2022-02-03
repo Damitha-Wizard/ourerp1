@@ -10,6 +10,8 @@ use App\Models\User as UserModel;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
+use App\Models\jQueryTheme as jQueryThemeModel;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -20,6 +22,18 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        
+        $jQueryThemeData=[
+            'name'=>'Le Frog'
+        ];
+        
+        $jQueryTheme=jQueryThemeModel::create($jQueryThemeData);
+        
+        $jQueryThemeData=[
+            'name'=>'UI Darkness'
+        ];
+        
+        $jQueryTheme=jQueryThemeModel::create($jQueryThemeData);
         
 //        $user_data=[
 //            'name' => 'Damitha',

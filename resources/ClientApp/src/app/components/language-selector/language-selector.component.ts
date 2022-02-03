@@ -12,7 +12,7 @@ export class LanguageSelectorComponent implements OnInit {
   CurrentLanguage:string='en';
 
   constructor(private translateService:TranslateService) { 
-    translateService.addLangs(['en','si','chi']);
+    translateService.addLangs(['en','chi']);
     translateService.setDefaultLang('en');
     translateService.use('en');
     this.Languages = translateService.getLangs();

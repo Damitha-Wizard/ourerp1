@@ -1,0 +1,8 @@
+<div style="display: block;margin-top:5px;margin-right: 5px;float:left;margin-left:5px;">
+    <button mat-icon-button><img (click)="OpenSettingsMenu();" [src]="ImageUrl" style="height:25px;width:25px;"/></button>
+</div>
+<div class="Menu" *ngIf="MenuIsShown" (mouseleave)="MenuIsShown=false;" (click)="MenuIsShown=false;">
+    <div (click)="ShowColorSettingsPage();">{{ 'colors' | translate }}</div>
+    <div >{{ 'layout' | translate }}</div>
+</div>
+

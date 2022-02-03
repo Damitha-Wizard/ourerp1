@@ -27,5 +27,8 @@
     "exit":"退出网络应用程序",
     "choose_a_date":"选择日期",
     "long-page":"长页",
-    "short-page":"短页"
+    "short-page":"短页",
+    "colors":"颜色",
+    "layout":"布局系统",
+    "jQuery_theme":"jQuery 主题"
 }

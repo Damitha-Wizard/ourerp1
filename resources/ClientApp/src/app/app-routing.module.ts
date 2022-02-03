@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ColorSettingsPageComponent } from './pages/color-settings-page/color-settings-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LongPageComponent } from './pages/long-page/long-page.component';
 import { PermissionsPageComponent } from './pages/permissions-page/permissions-page.component';
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path:'permissions', component:PermissionsPageComponent },
   { path:'long-page', component:LongPageComponent },
   { path:'short-page', component:ShortPageComponent },
-  { path:'record-job', component:RecordJobComponent }
+  { path:'record-job', component:RecordJobComponent },
+  { path:'color-settings', component:ColorSettingsPageComponent }
 ];
 
 @NgModule({

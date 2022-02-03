@@ -40,6 +40,8 @@ import { MAT_DATE_FORMATS } from '@angular/material/core';
 import { environment } from 'src/environments/environment';
 import { DeveloperMenuComponent } from './components/developer-menu/developer-menu.component';
 import { PermissionsPageComponent } from './pages/permissions-page/permissions-page.component';
+import { SettingsMenuComponent } from './components/settings-menu/settings-menu.component';
+import { ColorSettingsPageComponent } from './pages/color-settings-page/color-settings-page.component';
 
 
 export function httpTranslateLoader(http: HttpClient) {
@@ -74,7 +76,9 @@ export const DateFormats = {
     RecordJobComponent,
     LanguageSelectorComponent,
     DeveloperMenuComponent,
-    PermissionsPageComponent
+    PermissionsPageComponent,
+    SettingsMenuComponent,
+    ColorSettingsPageComponent
   ],
   imports: [
     BrowserModule,
