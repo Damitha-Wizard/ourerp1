@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
 import { CookieService } from 'ngx-cookie-service';
@@ -11,18 +11,28 @@ declare var $:any;
   templateUrl: './language-selector.component.html',
   styleUrls: ['./language-selector.component.scss']
 })
-export class LanguageSelectorComponent implements OnInit {
+export class LanguageSelectorComponent implements OnInit, AfterViewInit {
 
   Languages:string[]=[];
   CurrentLanguage:string='en';
 
   constructor(private translateService:TranslateService,private httpClient:HttpClient,private cookieService:CookieService) { 
 
-    translateService.addLangs(['en','chi']);
-    this.CurrentLanguage=this.cookieService.get('Language');
-    translateService.setDefaultLang(this.CurrentLanguage);
-    translateService.use(this.CurrentLanguage);
-    this.Languages = translateService.getLangs();
+    
+
+  }
+
+  ngAfterViewInit(){
+
+    this.httpClient.get(environment.url+'/public/get-language', { responseType:'text' }).subscribe((response:string)=>{
+      this.translateService.addLangs(['en','chi']);
+      this.CurrentLanguage=response;
+      this.translateService.setDefaultLang(this.CurrentLanguage);
+      this.translateService.use(this.CurrentLanguage);
+      this.Languages = this.translateService.getLangs();
+    });
+
+    
 
   }
 

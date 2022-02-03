@@ -5,7 +5,7 @@
 <label>{{ 'jQuery_theme' |  translate }}</label>
 </div>
 <div class="col-lg-9 col-md-8">
-<select (change)="jQueryUIThemeChanged($event);">
+<select (change)="jQueryUIThemeChanged($event);" id="cbojQueryUITheme">
     <option *ngFor="let jqtheme of jQueryUIThemes" [value]="jqtheme.name" [selected]="CurrentjQueryUITheme==jqtheme.name">{{ jqtheme.name }}</option>
 </select>
 </div>

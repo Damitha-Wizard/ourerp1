@@ -6,6 +6,10 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Corvo ERP') }}</title>
+        
+        <link href="<?php echo env('MY_URL') ?>/resources/jQuery/<?php echo $jQueryUITheme ?>/jquery-ui-1.13.1.custom/jquery-ui.min.css" rel="stylesheet"/>
+        <script src="<?php echo env('MY_URL') ?>/resources/jQuery/jquery-3.6.0.min.js"></script>
+        <script src="<?php echo env('MY_URL') ?>/resources/jQuery/<?php echo $jQueryUITheme ?>/jquery-ui-1.13.1.custom/jquery-ui.min.js"></script>
 
         <?php
         
@@ -15,14 +19,10 @@
                 
                 echo $Meta;
                 
-                $jQueryUITheme = request()->cookie('jQueryUITheme');
-                if($jQueryUITheme==''){
-                    $jQueryUITheme='Le Frog';
-                }
                 
-                ?>
+        ?>
         
-        <link href="<?php echo env('MY_URL') ?>/resources/jQuery/<?php echo $jQueryUITheme ?>/jquery-ui-1.13.1.custom/jquery-ui.min.css" rel="stylesheet"/>
+        @yield('jQueryUITheme')
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
         
                 <?php
@@ -134,8 +134,7 @@
         
                     
                     {{ $slot }}
-                    <script src="<?php echo env('MY_URL') ?>/resources/jQuery/jquery-3.6.0.min.js"></script>
-                    <script src="<?php echo env('MY_URL') ?>/resources/jQuery/<?php echo $jQueryUITheme ?>/jquery-ui-1.13.1.custom/jquery-ui.min.js"></script>
+                    
                     <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
                 <?php
                 

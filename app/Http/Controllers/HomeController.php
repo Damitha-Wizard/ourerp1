@@ -13,20 +13,25 @@ class HomeController extends Controller
     
     public function index(Request $request){
         
-       
+        $jQueryUITheme=$request->cookie('jQueryUITheme');       
         
-        return view('dashboard');
+        return view('dashboard')->with('jQueryUITheme',$jQueryUITheme);
     }
     
-    
+    public function getLanguage(Request $request){
+        
+        $Language=$request->cookie('Language');
+
+        return $Language;
+    }
     
     public function setLanguage(Request $request){
         
         $Language=$request->post('Language');
         
-        $minutes = 60*24*30;
-        $response = new Response($Language,200);
-        $response->withCookie(cookie('Language', $Language, $minutes));
+        $minutes = 60*24*365;
+        $response = new Response($Language);
+        $response->withCookie('Language', $Language, $minutes);
 
         return $response;
     }
@@ -36,5 +41,22 @@ class HomeController extends Controller
         $jQueryUIThemes=jQueryThemeModel::all();
         
         return json_encode($jQueryUIThemes);
+    }
+    
+    public function setjQueryUITheme(Request $request){
+        
+        $jQueryUITheme=$request->post('jQueryUITheme');
+        $minutes = 60*24*365;
+        $response = new Response($jQueryUITheme);
+        $response->withCookie('jQueryUITheme', $jQueryUITheme, $minutes);
+
+        return $response;
+    }
+    
+    public function getjQueryTheme(Request $request){
+        
+        $jQueryUITheme=$request->cookie('jQueryUITheme');
+        
+        return $jQueryUITheme;
     }
 }
