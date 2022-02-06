@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\App;
 
 use App\Models\jQueryTheme as jQueryThemeModel;
 
@@ -32,6 +33,8 @@ class HomeController extends Controller
         $minutes = 60*24*365;
         $response = new Response($Language);
         $response->withCookie('Language', $Language, $minutes);
+        
+        App::setLocale('chi');
 
         return $response;
     }

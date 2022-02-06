@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -5,7 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Corvo ERP') }}</title>
+        
+        
+        <title>
+            
+        </title>
         
         <link href="<?php echo env('MY_URL') ?>/resources/jQuery/<?php echo $jQueryUITheme ?>/jquery-ui-1.13.1.custom/jquery-ui.min.css" rel="stylesheet"/>
         <script src="<?php echo env('MY_URL') ?>/resources/jQuery/jquery-3.6.0.min.js"></script>
@@ -133,6 +138,7 @@
                 ?>
         
                     
+        
                     {{ $slot }}
                     
                     <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
